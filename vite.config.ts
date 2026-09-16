@@ -17,9 +17,9 @@ export default defineConfig({
     },
 
     manifest: {
-      name: 'minecraft-soundpack-tool',
+      name: 'MC音效包工具',
       short_name: 'mc-spt',
-      description: 'A Minecraft Soundpack Tool',
+      description: '基于 PWA 的 MC 音效包工具。',
       theme_color: '#ffffff',
     },
 
