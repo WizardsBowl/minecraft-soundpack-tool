@@ -2,6 +2,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-size: 16px;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -11,6 +12,14 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --c-text-1: #dfdfd6;
+  --c-text-2: #98989f;
+  --c-text-3: #6a6a71;
+
+  --c-border: #3c3f44;
+  --c-divider: #2e2e32;
+  --c-gutter: #000;
 }
 
 a {
@@ -28,11 +37,6 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {
@@ -54,8 +58,26 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.card {
-  padding: 2em;
+h1 {
+    color: var(--c-text-1);
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    color: var(--c-text-1);
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    color: var(--c-text-2);
+    font-size: 1.2em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 #app {
@@ -63,17 +85,35 @@ button:focus-visible {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
+
+    --c-text-1: #3c3c43;
+    --c-text-2: #67676c;
+    --c-text-3: #929295;
+
+    --c-border: #c2c2c4;
+    --c-divider: #e2e2e3;
+    --c-gutter: #e2e2e3;
   }
   a:hover {
     color: #747bff;
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media (max-width: 768px) {
+  #app {
+    padding: 1rem;
+    height: auto;
   }
 }

@@ -1,32 +1,37 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import PWABadge from './components/PWABadge.vue'
+import AppInfo from './components/AppInfo.vue';
+import SoundsList from './components/SoundsList.vue';
+import PropertiesView from './components/PropertiesView.vue';
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/favicon.svg" class="logo" alt="minecraft-soundpack-tool logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="contents">
+    <AppInfo />
+    <SoundsList />
+    <PropertiesView />
   </div>
-  <HelloWorld msg="minecraft-soundpack-tool" />
-  <PWABadge />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+#contents {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  height: 100%;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+#contents > * {
+  border: 1px solid var(--c-border);
+  border-radius: 1rem;
+  padding: 1rem;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+@media (max-width: 768px) {
+  #contents {
+    flex-wrap: nowrap;
+  }
 }
 </style>
