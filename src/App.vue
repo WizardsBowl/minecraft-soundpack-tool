@@ -2,11 +2,13 @@
 import AppInfo from './components/AppInfo.vue';
 import SoundsList from './components/SoundsList.vue';
 import PropertiesView from './components/PropertiesView.vue';
+import PackConfig from './components/PackConfig.vue';
 </script>
 
 <template>
   <div id="contents">
     <AppInfo />
+    <PackConfig />
     <SoundsList />
     <PropertiesView />
   </div>
@@ -25,7 +27,7 @@ import PropertiesView from './components/PropertiesView.vue';
 
 #contents > * {
   border: 1px solid var(--c-border);
-  border-radius: 1rem;
+  border-radius: 16px;
   padding: 1rem;
 }
 

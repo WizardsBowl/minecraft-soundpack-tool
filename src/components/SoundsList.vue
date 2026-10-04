@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { ref, reactive } from 'vue';
+
+const containerCollapsed = ref<boolean>(false);
+
 const sounds = [
     { id: 1, name: 'Sound 1' },
     { id: 2, name: 'Sound 2' },
@@ -7,13 +11,18 @@ const sounds = [
 </script>
 
 <template>
-    <div id="sounds-list">
+    <div id="sounds-list" class="collapsible-container" :class="{ collapsed: containerCollapsed }">
         <h2>Sounds</h2>
-        <ul>
-            <li v-for="sound in sounds" :key="sound.id">
-                {{ sound.name }}
-            </li>
-        </ul>
+        <button @click="containerCollapsed = !containerCollapsed" class="collapse-button">
+            {{ containerCollapsed ? '展开' : '折叠' }}
+        </button>
+        <div v-show="!containerCollapsed">
+            <ul>
+                <li v-for="sound in sounds" :key="sound.id">
+                    {{ sound.name }}
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
